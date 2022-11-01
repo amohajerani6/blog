@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Amir blog</title>
+</head>
+
+<body>
+  <%include partials/header%>
+  <h1>Hello</h1>
+  <p><%=homeStartingContent%></p>
+  <a href="/compose"><b>Write a new post</b></a>
+
+  <%for (var title in posts) { var txtArea=posts[title].substring(0,4)%>
+  <%include partials/post {title:title, txtArea:txtArea}%>
+  <%}%>
+    <%include partials/footer%>
+</body>
+
+</html>
