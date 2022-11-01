@@ -12,7 +12,7 @@
   <p><%=homeStartingContent%></p>
   <a href="/compose"><b>Write a new post</b></a>
 
-  <%for (var title in posts) { var txtArea=posts[title].substring(0,4)%>
+  <%for (var title in posts) { var txtArea=posts[title].substring(0,20)%>
   <%include partials/post {title:title, txtArea:txtArea}%>
   <%}%>
     <%include partials/footer%>
