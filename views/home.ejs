@@ -7,15 +7,18 @@
 </head>
 
 <body>
-  <%include partials/header%>
+  <%-include ('partials/header')%>
   <h1>Hello</h1>
   <p><%=homeStartingContent%></p>
   <a href="/compose"><b>Write a new post</b></a>
 
-  <%for (var title in posts) { var txtArea=posts[title].substring(0,20)%>
-  <%include partials/post {title:title, txtArea:txtArea}%>
-  <%}%>
-    <%include partials/footer%>
+  <%posts.forEach(function(post) { var title=post.title; var txtArea=post.content; var trunc=txtArea.substring(0,10);%>
+
+    <h2><%=title%></h2>
+    <p><%=trunc%> <a href="/posts/<%=title%>"> Read more ...</a></p>
+
+  <%})%>
+    <%-include ('partials/footer')%>
 </body>
 
 </html>
